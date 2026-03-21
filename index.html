@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -192,6 +193,25 @@
       color: var(--accent);
       font-weight: 600;
       font-size: 1.05rem;
+    }
+
+    /* Beehiiv embed styling */
+    .beehiiv-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .beehiiv-wrap .beehiiv-embed {
+      width: 100%;
+      max-width: 480px;
+      height: 160px;
+      border: none;
+      background: transparent;
+      border-radius: 0;
+    }
+
+    .beehiiv-cta .beehiiv-embed {
+      max-width: 480px;
     }
 
     /* ==============================
@@ -624,15 +644,8 @@
       <p class="hero-sub">
         The AI-powered platform that turns the world's best books into guided experiences you actually finish — and feel.
       </p>
-      <div class="hero-form">
-        <form class="email-row" id="hero-form" action="https://formspree.io/f/xpwzgqkr" method="POST">
-          <input type="email" name="email" placeholder="Enter your email" required autocomplete="email">
-          <button type="submit" class="btn-primary">Get Early Access</button>
-        </form>
-        <p class="form-note">Free to join. No spam — just first access when we launch.</p>
-        <div class="success-msg" id="hero-success">
-          ✦ You're in. We'll let you know when it's time.
-        </div>
+      <div class="hero-form beehiiv-wrap">
+        <iframe src="https://subscribe-forms.beehiiv.com/81ebb407-e2c6-42b6-8eed-8d9d735cd758" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no"></iframe>
       </div>
     </div>
   </section>
@@ -739,15 +752,8 @@
     <section class="cta-banner">
       <h2>Ready to read differently?</h2>
       <p>Join the waitlist and be the first to experience books the way they were meant to be felt.</p>
-      <div class="hero-form">
-        <form class="email-row" id="cta-form" action="https://formspree.io/f/xpwzgqkr" method="POST">
-          <input type="email" name="email" placeholder="Enter your email" required autocomplete="email">
-          <button type="submit" class="btn-primary">Get Early Access</button>
-        </form>
-        <p class="form-note">Free. No credit card. Just transformation.</p>
-        <div class="success-msg" id="cta-success">
-          ✦ You're in. We'll let you know when it's time.
-        </div>
+      <div class="hero-form beehiiv-wrap beehiiv-cta">
+        <iframe src="https://subscribe-forms.beehiiv.com/81ebb407-e2c6-42b6-8eed-8d9d735cd758" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no"></iframe>
       </div>
     </section>
   </div>
@@ -762,37 +768,6 @@
   </footer>
 
   <script>
-    // Form handling
-    document.querySelectorAll('form').forEach(form => {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btn = form.querySelector('button');
-        const originalText = btn.textContent;
-        btn.textContent = 'Joining...';
-        btn.disabled = true;
-
-        try {
-          const res = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if (res.ok) {
-            form.style.display = 'none';
-            form.nextElementSibling.style.display = 'none'; // form-note
-            form.nextElementSibling.nextElementSibling.style.display = 'block'; // success-msg
-          } else {
-            btn.textContent = 'Try again';
-            btn.disabled = false;
-          }
-        } catch {
-          btn.textContent = 'Try again';
-          btn.disabled = false;
-        }
-      });
-    });
-
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
