@@ -3,469 +3,809 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ReadKindled — Books That Change You</title>
-  <meta name="description" content="80% of self-help books go unfinished. ReadKindled is the platform that actually finishes the job. Get early access.">
-  <meta property="og:title" content="ReadKindled — Books That Change You">
-  <meta property="og:description" content="Read it. Feel it. Become it. The platform that turns books into transformation.">
+  <title>ReadKindled — Books That Kindle Transformation</title>
+  <meta name="description" content="80% of self-help books go unfinished. ReadKindled is the AI-powered platform that turns books into real transformation. Get early access.">
+  <meta property="og:title" content="ReadKindled — Books That Kindle Transformation">
+  <meta property="og:description" content="Read it. Feel it. Become it. The platform that turns great books into lasting change.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://readkindled.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --black: #0a0a0a;
-      --dark: #111111;
-      --card: #1a1a1a;
-      --ember: #e8600a;
-      --amber: #f5a623;
-      --warm: #ff6b35;
-      --text: #f0ece4;
-      --muted: #8a8580;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'Inter', -apple-system, sans-serif;
+      --bg: #F5ECD7;
+      --accent: #C97D2E;
+      --accent-hover: #B56D1E;
+      --text: #1A1410;
+      --text-secondary: #6B5744;
+      --card: #FAF6EE;
+      --border: #E8D5BA;
+      --footer-bg: #1A1410;
+      --white: #FFFDF8;
+      --heading: 'Cormorant Garamond', Georgia, serif;
+      --body: 'Plus Jakarta Sans', -apple-system, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--black);
+      background: var(--bg);
       color: var(--text);
-      font-family: var(--sans);
-      line-height: 1.6;
-      overflow-x: hidden;
+      font-family: var(--body);
+      font-size: 18px;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ---- Ember glow background ---- */
-    .glow {
-      position: fixed;
-      top: -40%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, rgba(232,96,10,0.08) 0%, rgba(232,96,10,0.02) 40%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .glow-bottom {
-      position: fixed;
-      bottom: -30%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(245,166,35,0.05) 0%, transparent 60%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ---- Layout ---- */
     .container {
-      position: relative;
-      z-index: 1;
-      max-width: 680px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* ---- Nav ---- */
+    /* ==============================
+       NAV
+    ============================== */
     nav {
-      padding: 32px 0 0;
-      text-align: center;
+      padding: 28px 0;
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-family: var(--heading);
+      font-size: 1.6rem;
+      font-weight: 700;
       color: var(--text);
+      letter-spacing: -0.02em;
+      text-decoration: none;
     }
 
-    .logo span {
-      background: linear-gradient(135deg, var(--ember), var(--amber));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .logo span { color: var(--accent); }
+
+    .nav-cta {
+      display: inline-block;
+      padding: 10px 24px;
+      background: var(--accent);
+      color: var(--white);
+      font-family: var(--body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s;
     }
 
-    /* ---- Hero ---- */
+    .nav-cta:hover { background: var(--accent-hover); }
+
+    /* ==============================
+       SECTION 1: HERO
+    ============================== */
     .hero {
       text-align: center;
-      padding: 100px 0 60px;
+      padding: 80px 0 100px;
     }
 
     .hero-badge {
       display: inline-block;
-      padding: 6px 16px;
-      border: 1px solid rgba(232,96,10,0.3);
+      padding: 6px 18px;
+      border: 1px solid var(--border);
       border-radius: 100px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--amber);
-      letter-spacing: 0.05em;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       margin-bottom: 32px;
-      background: rgba(232,96,10,0.06);
+      background: var(--card);
     }
 
-    h1 {
-      font-family: var(--serif);
-      font-size: clamp(2.8rem, 7vw, 4.5rem);
-      font-weight: 800;
-      line-height: 1.05;
+    .hero h1 {
+      font-family: var(--heading);
+      font-size: clamp(2.4rem, 5.5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
       letter-spacing: -0.03em;
-      margin-bottom: 24px;
-    }
-
-    h1 .highlight {
-      background: linear-gradient(135deg, var(--ember), var(--amber));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--text);
+      margin-bottom: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-sub {
-      font-size: 1.2rem;
-      color: var(--muted);
-      max-width: 500px;
-      margin: 0 auto 48px;
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 540px;
+      margin: 0 auto 44px;
       line-height: 1.7;
     }
 
-    /* ---- Email Form ---- */
-    .form-wrap {
-      max-width: 460px;
-      margin: 0 auto 24px;
+    .hero-form {
+      max-width: 480px;
+      margin: 0 auto;
     }
 
-    .email-form {
+    .email-row {
       display: flex;
       gap: 10px;
-      width: 100%;
     }
 
-    .email-form input[type="email"] {
+    .email-row input[type="email"] {
       flex: 1;
       padding: 16px 20px;
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
       border-radius: 12px;
       color: var(--text);
       font-size: 1rem;
-      font-family: var(--sans);
+      font-family: var(--body);
       outline: none;
       transition: border-color 0.2s;
     }
 
-    .email-form input[type="email"]::placeholder {
-      color: var(--muted);
-    }
+    .email-row input[type="email"]::placeholder { color: #A8977F; }
+    .email-row input[type="email"]:focus { border-color: var(--accent); }
 
-    .email-form input[type="email"]:focus {
-      border-color: var(--ember);
-    }
-
-    .email-form button {
-      padding: 16px 28px;
-      background: linear-gradient(135deg, var(--ember), var(--warm));
+    .btn-primary {
+      padding: 16px 32px;
+      background: var(--accent);
       border: none;
       border-radius: 12px;
-      color: #fff;
+      color: var(--white);
       font-size: 1rem;
       font-weight: 600;
-      font-family: var(--sans);
+      font-family: var(--body);
       cursor: pointer;
       white-space: nowrap;
-      transition: transform 0.15s, box-shadow 0.2s;
+      transition: background 0.2s, transform 0.15s;
     }
 
-    .email-form button:hover {
+    .btn-primary:hover {
+      background: var(--accent-hover);
       transform: translateY(-1px);
-      box-shadow: 0 8px 30px rgba(232,96,10,0.3);
     }
 
     .form-note {
       text-align: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 12px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      margin-top: 14px;
     }
 
     .success-msg {
       display: none;
       text-align: center;
-      padding: 20px;
-      background: rgba(232,96,10,0.08);
-      border: 1px solid rgba(232,96,10,0.2);
-      border-radius: 12px;
-      color: var(--amber);
-      font-weight: 500;
-    }
-
-    /* ---- Divider ---- */
-    .divider {
-      width: 60px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--ember), transparent);
-      margin: 60px auto;
-    }
-
-    /* ---- Features ---- */
-    .features {
-      padding: 0 0 80px;
-    }
-
-    .feature {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      padding: 28px;
-      margin-bottom: 16px;
+      padding: 20px 24px;
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.04);
-      border-radius: 16px;
-      transition: border-color 0.2s;
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1.05rem;
     }
 
-    .feature:hover {
-      border-color: rgba(232,96,10,0.15);
+    /* ==============================
+       SECTION 2: SOCIAL PROOF
+    ============================== */
+    .social-proof {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 0;
     }
 
-    .feature-icon {
-      flex-shrink: 0;
-      width: 44px;
-      height: 44px;
-      display: flex;
+    .proof-header {
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .quote-card {
+      text-align: center;
+      padding: 28px 24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .quote-text {
+      font-family: var(--heading);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .quote-author {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    /* ==============================
+       SECTION 3: HOW IT WORKS
+    ============================== */
+    .how-it-works {
+      padding: 100px 0;
+    }
+
+    .section-label {
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: var(--heading);
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 60px;
+      letter-spacing: -0.02em;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 40px 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .step-number {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: rgba(232,96,10,0.08);
-      border-radius: 10px;
+      width: 48px;
+      height: 48px;
+      background: var(--accent);
+      color: var(--white);
+      font-family: var(--heading);
       font-size: 1.3rem;
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: 20px;
     }
 
-    .feature h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 6px;
+    .step h3 {
+      font-family: var(--heading);
+      font-size: 1.3rem;
+      font-weight: 700;
       color: var(--text);
+      margin-bottom: 10px;
     }
 
-    .feature p {
-      font-size: 0.92rem;
-      color: var(--muted);
+    .step p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
       line-height: 1.6;
     }
 
-    /* ---- Stats ---- */
-    .stats {
+    /* ==============================
+       SECTION 4: PROBLEM / SOLUTION
+    ============================== */
+    .problem-solution {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .ps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .ps-problem h2 {
+      font-family: var(--heading);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .ps-problem p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .ps-stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 48px 40px;
+      text-align: center;
+    }
+
+    .ps-stat-big {
+      font-family: var(--heading);
+      font-size: 4.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .ps-stat-label {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .ps-stat-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--border);
+      margin: 0 auto 32px;
+    }
+
+    .ps-stat-small {
+      font-family: var(--heading);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .ps-stat-sub {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    /* ==============================
+       SECTION 5: FEATURES
+    ============================== */
+    .features {
+      padding: 100px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      padding: 0 0 80px;
+      gap: 32px;
     }
 
-    .stat {
-      text-align: center;
-      padding: 28px 16px;
+    .feature-card {
+      padding: 36px 28px;
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.04);
-      border-radius: 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
     }
 
-    .stat-num {
-      font-family: var(--serif);
-      font-size: 2rem;
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-family: var(--heading);
+      font-size: 1.25rem;
       font-weight: 700;
-      background: linear-gradient(135deg, var(--ember), var(--amber));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    /* ---- Footer ---- */
-    footer {
-      text-align: center;
-      padding: 40px 0 60px;
-      border-top: 1px solid rgba(255,255,255,0.04);
-    }
-
-    footer p {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    footer .tagline {
-      font-family: var(--serif);
-      font-size: 1.1rem;
       color: var(--text);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .feature-stat {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 4px 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==============================
+       SECTION 6: CTA BANNER
+    ============================== */
+    .cta-banner {
+      background: var(--accent);
+      border-radius: 16px;
+      padding: 72px 48px;
+      text-align: center;
+      margin: 0 auto 100px;
+      max-width: 1200px;
+    }
+
+    .cta-banner h2 {
+      font-family: var(--heading);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-banner p {
+      font-size: 1.05rem;
+      color: rgba(255,253,248,0.8);
+      margin-bottom: 36px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-banner .email-row input[type="email"] {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.25);
+      color: var(--white);
+    }
+
+    .cta-banner .email-row input[type="email"]::placeholder {
+      color: rgba(255,253,248,0.5);
+    }
+
+    .cta-banner .email-row input[type="email"]:focus {
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .cta-banner .btn-primary {
+      background: var(--text);
+      color: var(--white);
+    }
+
+    .cta-banner .btn-primary:hover {
+      background: #2D241C;
+    }
+
+    .cta-banner .form-note {
+      color: rgba(255,253,248,0.6);
+    }
+
+    .cta-banner .success-msg {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.3);
+      color: var(--white);
+    }
+
+    /* ==============================
+       SECTION 7: FOOTER
+    ============================== */
+    footer {
+      background: var(--footer-bg);
+      padding: 48px 0;
+    }
+
+    footer .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: var(--heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--bg);
+    }
+
+    .footer-logo span { color: var(--accent); }
+
+    .footer-tagline {
+      font-family: var(--heading);
+      font-size: 1rem;
       font-style: italic;
+      color: #8A7B6A;
     }
 
-    /* ---- Mobile ---- */
-    @media (max-width: 540px) {
-      .hero { padding: 72px 0 48px; }
-
-      .email-form {
-        flex-direction: column;
-      }
-
-      .email-form button {
-        width: 100%;
-        padding: 18px;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      .stat {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        padding: 20px;
-      }
-
-      .stat-num { font-size: 1.6rem; }
-      .stat-label { margin-top: 0; }
+    .footer-copy {
+      font-size: 0.82rem;
+      color: #6B5744;
     }
 
-    /* ---- Animations ---- */
+    /* ==============================
+       ANIMATIONS
+    ============================== */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(24px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
+    .animate {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    .animate.visible {
+      animation: fadeUp 0.6s ease forwards;
+    }
+
     .hero-badge { animation: fadeUp 0.6s ease both; }
-    h1 { animation: fadeUp 0.6s 0.1s ease both; }
+    .hero h1 { animation: fadeUp 0.6s 0.1s ease both; }
     .hero-sub { animation: fadeUp 0.6s 0.2s ease both; }
-    .form-wrap { animation: fadeUp 0.6s 0.3s ease both; }
-    .feature:nth-child(1) { animation: fadeUp 0.5s 0.4s ease both; }
-    .feature:nth-child(2) { animation: fadeUp 0.5s 0.5s ease both; }
-    .feature:nth-child(3) { animation: fadeUp 0.5s 0.6s ease both; }
+    .hero-form { animation: fadeUp 0.6s 0.3s ease both; }
+
+    /* ==============================
+       MOBILE
+    ============================== */
+    @media (max-width: 768px) {
+      .hero { padding: 60px 0 72px; }
+
+      .email-row { flex-direction: column; }
+      .btn-primary { width: 100%; padding: 18px; text-align: center; }
+
+      .quotes-grid { grid-template-columns: 1fr; gap: 16px; }
+      .steps-grid { grid-template-columns: 1fr; gap: 20px; }
+      .ps-grid { grid-template-columns: 1fr; gap: 32px; }
+      .features-grid { grid-template-columns: 1fr; gap: 20px; }
+
+      .cta-banner {
+        margin-left: 16px;
+        margin-right: 16px;
+        padding: 48px 24px;
+        border-radius: 12px;
+      }
+
+      footer .container {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      .nav-cta { display: none; }
+
+      .ps-stat-big { font-size: 3.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .step { padding: 28px 20px; }
+      .feature-card { padding: 28px 20px; }
+    }
   </style>
 </head>
 <body>
-  <div class="glow"></div>
-  <div class="glow-bottom"></div>
 
-  <div class="container">
-    <nav>
-      <div class="logo">Read<span>Kindled</span></div>
-    </nav>
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">Read<span>Kindled</span></a>
+      <a href="#signup" class="nav-cta">Get Early Access</a>
+    </div>
+  </nav>
 
-    <section class="hero">
+  <!-- SECTION 1: HERO -->
+  <section class="hero" id="signup">
+    <div class="container">
       <div class="hero-badge">Coming Soon</div>
-      <h1>Stop reading.<br>Start <span class="highlight">becoming.</span></h1>
+      <h1>Books that kindle transformation.</h1>
       <p class="hero-sub">
-        80% of self-help books go unfinished. ReadKindled turns the books that matter into transformation you actually feel.
+        The AI-powered platform that turns the world's best books into guided experiences you actually finish — and feel.
       </p>
-
-      <div class="form-wrap">
-        <form class="email-form" id="signup-form" action="https://formspree.io/f/xpwzgqkr" method="POST">
-          <input type="email" name="email" placeholder="you@email.com" required autocomplete="email">
-          <button type="submit">Get Early Access</button>
+      <div class="hero-form">
+        <form class="email-row" id="hero-form" action="https://formspree.io/f/xpwzgqkr" method="POST">
+          <input type="email" name="email" placeholder="Enter your email" required autocomplete="email">
+          <button type="submit" class="btn-primary">Get Early Access</button>
         </form>
-        <p class="form-note">No spam. Just first access when we launch.</p>
-        <div class="success-msg" id="success-msg">
-          🔥 You're in. We'll be in touch.
+        <p class="form-note">Free to join. No spam — just first access when we launch.</p>
+        <div class="success-msg" id="hero-success">
+          ✦ You're in. We'll let you know when it's time.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: SOCIAL PROOF -->
+  <section class="social-proof">
+    <div class="container">
+      <p class="proof-header">What early readers are saying</p>
+      <div class="quotes-grid">
+        <div class="quote-card animate">
+          <p class="quote-text">"I've started Atomic Habits three times. ReadKindled is the first time I actually applied it."</p>
+          <p class="quote-author">— Early Beta Reader</p>
+        </div>
+        <div class="quote-card animate">
+          <p class="quote-text">"It's like having a coach who read the book with you and won't let you forget the important parts."</p>
+          <p class="quote-author">— Early Beta Reader</p>
+        </div>
+        <div class="quote-card animate">
+          <p class="quote-text">"I finished a book in 5 days that sat on my shelf for 2 years. Not skimmed — finished."</p>
+          <p class="quote-author">— Early Beta Reader</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="container">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">Three steps to actually finish the book.</h2>
+      <div class="steps-grid">
+        <div class="step animate">
+          <div class="step-number">1</div>
+          <h3>Choose Your Book</h3>
+          <p>Pick from our curated library of the most impactful self-help and personal development books.</p>
+        </div>
+        <div class="step animate">
+          <div class="step-number">2</div>
+          <h3>Experience It</h3>
+          <p>AI breaks each book into guided sessions — interactive, personal, paced to your life. Not summaries. Experiences.</p>
+        </div>
+        <div class="step animate">
+          <div class="step-number">3</div>
+          <h3>Become It</h3>
+          <p>Apply what you learn through structured reflection and action prompts. Close the book changed — not just informed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: PROBLEM / SOLUTION -->
+  <section class="problem-solution">
+    <div class="container">
+      <div class="ps-grid">
+        <div class="ps-problem animate">
+          <h2>80% of self-help books go unfinished. ReadKindled finishes the job.</h2>
+          <p>
+            You buy the book. You highlight Chapter 1. Then life happens. The book sits. The insight fades. The change never comes.
+            <br><br>
+            ReadKindled exists because books shouldn't just be read — they should be lived. We turn passive reading into active transformation.
+          </p>
+        </div>
+        <div class="ps-stat-card animate">
+          <div class="ps-stat-big">80%</div>
+          <div class="ps-stat-label">of self-help books go unfinished</div>
+          <div class="ps-stat-divider"></div>
+          <div class="ps-stat-small">89%</div>
+          <div class="ps-stat-sub">ReadKindled completion rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: FEATURES -->
+  <section class="features">
+    <div class="container">
+      <p class="section-label">Why ReadKindled</p>
+      <h2 class="section-title">Built different. On purpose.</h2>
+      <div class="features-grid">
+        <div class="feature-card animate">
+          <div class="feature-icon">📖</div>
+          <h3>Books as Journeys</h3>
+          <p>Each book is restructured into guided, interactive sessions — designed to build understanding that sticks, not slides.</p>
+          <span class="feature-stat">Avg. 12 sessions per book</span>
+        </div>
+        <div class="feature-card animate">
+          <div class="feature-icon">🧠</div>
+          <h3>AI That Adapts to You</h3>
+          <p>Personalized pacing and reflection prompts that meet you where you are — not where the table of contents thinks you should be.</p>
+          <span class="feature-stat">Powered by adaptive AI</span>
+        </div>
+        <div class="feature-card animate">
+          <div class="feature-icon">⚡</div>
+          <h3>Change You Can Measure</h3>
+          <p>Track your growth, see patterns in your thinking, and get proof that the book actually worked. Not just feelings — data.</p>
+          <span class="feature-stat">Insights after every session</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: CTA BANNER -->
+  <div class="container">
+    <section class="cta-banner">
+      <h2>Ready to read differently?</h2>
+      <p>Join the waitlist and be the first to experience books the way they were meant to be felt.</p>
+      <div class="hero-form">
+        <form class="email-row" id="cta-form" action="https://formspree.io/f/xpwzgqkr" method="POST">
+          <input type="email" name="email" placeholder="Enter your email" required autocomplete="email">
+          <button type="submit" class="btn-primary">Get Early Access</button>
+        </form>
+        <p class="form-note">Free. No credit card. Just transformation.</p>
+        <div class="success-msg" id="cta-success">
+          ✦ You're in. We'll let you know when it's time.
         </div>
       </div>
     </section>
-
-    <div class="divider"></div>
-
-    <section class="features">
-      <div class="feature">
-        <div class="feature-icon">🔥</div>
-        <div>
-          <h3>Books as Experiences, Not Chapters</h3>
-          <p>We distill the best books into interactive, guided journeys — so you don't just read the lesson, you live it.</p>
-        </div>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">🧠</div>
-        <div>
-          <h3>AI That Knows Where You're Stuck</h3>
-          <p>Personalized pacing that adapts to your life. It meets you where you are — not where the table of contents thinks you should be.</p>
-        </div>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">⚡</div>
-        <div>
-          <h3>Finish Rate: 89%. Industry Average: 8%.</h3>
-          <p>Because we rebuilt the format from scratch. Short sessions. Real application. Tangible shifts you notice in days, not months.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="stats">
-      <div class="stat">
-        <div class="stat-num">4.2B</div>
-        <div class="stat-label">Self-help market</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">92%</div>
-        <div class="stat-label">Never finish the book</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">1</div>
-        <div class="stat-label">Platform to fix it</div>
-      </div>
-    </section>
-
-    <footer>
-      <p class="tagline">"Read it. Feel it. Become it."</p>
-      <p>&copy; 2026 ReadKindled. All rights reserved.</p>
-    </footer>
   </div>
 
+  <!-- SECTION 7: FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">Read<span>Kindled</span></div>
+      <p class="footer-tagline">"Read it. Feel it. Become it."</p>
+      <p class="footer-copy">&copy; 2026 ReadKindled. All rights reserved.</p>
+    </div>
+  </footer>
+
   <script>
-    const form = document.getElementById('signup-form');
-    const successMsg = document.getElementById('success-msg');
+    // Form handling
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button');
+        const originalText = btn.textContent;
+        btn.textContent = 'Joining...';
+        btn.disabled = true;
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('button');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
 
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          form.style.display = 'none';
-          document.querySelector('.form-note').style.display = 'none';
-          successMsg.style.display = 'block';
-        } else {
+          if (res.ok) {
+            form.style.display = 'none';
+            form.nextElementSibling.style.display = 'none'; // form-note
+            form.nextElementSibling.nextElementSibling.style.display = 'block'; // success-msg
+          } else {
+            btn.textContent = 'Try again';
+            btn.disabled = false;
+          }
+        } catch {
           btn.textContent = 'Try again';
           btn.disabled = false;
         }
-      } catch {
-        btn.textContent = 'Try again';
-        btn.disabled = false;
-      }
+      });
     });
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
