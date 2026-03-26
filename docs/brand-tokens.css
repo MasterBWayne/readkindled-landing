@@ -1,0 +1,172 @@
+/**
+ * ReadKindled — Canonical Brand Tokens
+ * Source of truth for all surfaces: readkindled.com, loop-reader.vercel.app, readkindled.vercel.app
+ * Last updated: 2026-03-22
+ * Maintained by: Steve Rogers (Branding)
+ *
+ * USAGE:
+ *   Import this file or mirror these variables in your globals.css / tailwind.config.
+ *   Never hardcode colors — always reference tokens.
+ */
+
+:root {
+
+  /* =============================================
+     BACKGROUND
+     ============================================= */
+  --rk-bg:              #F5ECD7;   /* Warm cream — primary background */
+  --rk-bg-card:         #FAF6EE;   /* Card / surface */
+  --rk-bg-surface:      #F0EBE1;   /* Subtle section bg */
+
+  /* =============================================
+     DARK MODE BACKGROUNDS
+     ============================================= */
+  --rk-bg-dark:         #1A1410;   /* Primary dark bg */
+  --rk-bg-dark-card:    #241C15;   /* Dark card surface */
+  --rk-bg-dark-surface: #2E231A;   /* Dark section bg */
+
+  /* =============================================
+     ACCENT — AMBER
+     ============================================= */
+  --rk-accent:          #C97D2E;   /* Primary amber — buttons, highlights */
+  --rk-accent-hover:    #B56D1E;   /* Amber hover state */
+  --rk-accent-light:    #F5C87A;   /* Light amber — glows, tints */
+  --rk-accent-pale:     #FDECD4;   /* Amber tint bg — badge, pill backgrounds */
+
+  /* =============================================
+     TEXT
+     ============================================= */
+  --rk-text:            #1A1410;   /* Primary text */
+  --rk-text-secondary:  #6B5744;   /* Secondary / body text */
+  --rk-text-muted:      #9B8878;   /* Muted / meta text */
+  --rk-text-inverse:    #F5ECD7;   /* Text on dark backgrounds */
+
+  /* =============================================
+     BORDERS & DIVIDERS
+     ============================================= */
+  --rk-border:          #E8D5BA;   /* Default border */
+  --rk-border-strong:   #D4B896;   /* Stronger border / divider */
+  --rk-border-dark:     rgba(255,255,255,0.10);  /* Border on dark bg */
+
+  /* =============================================
+     TYPOGRAPHY
+     ============================================= */
+  --rk-font-heading:    'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --rk-font-body:       'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+
+  /* Font sizes */
+  --rk-text-xs:         11px;
+  --rk-text-sm:         13px;
+  --rk-text-base:       16px;
+  --rk-text-md:         18px;
+  --rk-text-lg:         22px;
+  --rk-text-xl:         28px;
+  --rk-text-2xl:        36px;
+  --rk-text-3xl:        48px;
+  --rk-text-4xl:        64px;
+
+  /* Letter spacing */
+  --rk-tracking-tight:  -0.5px;
+  --rk-tracking-normal: 0px;
+  --rk-tracking-wide:   2px;
+  --rk-tracking-wider:  4px;
+  --rk-tracking-widest: 6px;
+
+  /* =============================================
+     SPACING
+     ============================================= */
+  --rk-space-1:   4px;
+  --rk-space-2:   8px;
+  --rk-space-3:   12px;
+  --rk-space-4:   16px;
+  --rk-space-5:   20px;
+  --rk-space-6:   24px;
+  --rk-space-8:   32px;
+  --rk-space-10:  40px;
+  --rk-space-12:  48px;
+  --rk-space-16:  64px;
+  --rk-space-20:  80px;
+  --rk-space-24:  96px;
+  --rk-space-32:  128px;
+
+  /* =============================================
+     BORDER RADIUS
+     ============================================= */
+  --rk-radius-sm:   6px;
+  --rk-radius:      12px;
+  --rk-radius-lg:   20px;
+  --rk-radius-full: 9999px;
+
+  /* =============================================
+     SHADOWS
+     ============================================= */
+  --rk-shadow-sm:   0 2px 8px rgba(26, 20, 16, 0.06);
+  --rk-shadow:      0 4px 24px rgba(26, 20, 16, 0.08);
+  --rk-shadow-lg:   0 8px 40px rgba(26, 20, 16, 0.12);
+
+  /* =============================================
+     TRANSITIONS
+     ============================================= */
+  --rk-transition:  0.2s ease;
+
+}
+
+/* =============================================
+   DARK MODE OVERRIDES
+   Apply to <html data-theme="dark"> or @media (prefers-color-scheme: dark)
+   ============================================= */
+[data-theme="dark"] {
+  --rk-bg:              #1A1410;
+  --rk-bg-card:         #241C15;
+  --rk-bg-surface:      #2E231A;
+  --rk-text:            #F5ECD7;
+  --rk-text-secondary:  #C4A882;
+  --rk-text-muted:      #8A7060;
+  --rk-border:          rgba(255,255,255,0.10);
+  --rk-border-strong:   rgba(255,255,255,0.18);
+  --rk-shadow-sm:       0 2px 8px rgba(0,0,0,0.3);
+  --rk-shadow:          0 4px 24px rgba(0,0,0,0.4);
+  --rk-shadow-lg:       0 8px 40px rgba(0,0,0,0.5);
+  /* Accent stays same in dark mode — amber reads well on dark */
+}
+
+/* =============================================
+   TAILWIND CONFIG REFERENCE
+   Add to tailwind.config.js extend.colors:
+
+   colors: {
+     rk: {
+       bg:           '#F5ECD7',
+       'bg-card':    '#FAF6EE',
+       accent:       '#C97D2E',
+       'accent-hover': '#B56D1E',
+       'accent-light': '#F5C87A',
+       'accent-pale':  '#FDECD4',
+       text:         '#1A1410',
+       'text-2':     '#6B5744',
+       muted:        '#9B8878',
+       border:       '#E8D5BA',
+       'dark-bg':    '#1A1410',
+       'dark-card':  '#241C15',
+     }
+   }
+   ============================================= */
+
+/* =============================================
+   NEXT.JS / EXPO USAGE NOTES
+   =============================================
+   Next.js (loop-reader):
+     1. Import this file in globals.css: @import './brand-tokens.css';
+     2. Replace all hardcoded colors with var(--rk-*) references
+     3. Dark mode: add data-theme="dark" to <html> via next-themes
+
+   Expo (readkindled.vercel.app):
+     1. Mirror tokens in a StyleSheet constants file:
+        export const Colors = { bg: '#F5ECD7', accent: '#C97D2E', ... }
+     2. Use the same hex values — no CSS variables in React Native
+     3. For fonts: load Cormorant Garamond + Plus Jakarta Sans via expo-google-fonts
+
+   readkindled.com (static HTML):
+     Already uses these values. This file IS the source of truth.
+     Do not change readkindled.com styles — sync others TO this.
+   ============================================= */
