@@ -586,7 +586,8 @@
         text-align: center;
       }
 
-      .nav-cta { display: none; }
+      .nav-cta:first-child { display: none; }
+      .nav-cta:last-child { font-size: 0.82rem; padding: 8px 18px; }
 
       .ps-stat-big { font-size: 3.5rem; }
     }
@@ -604,18 +605,25 @@
   <nav>
     <div class="container">
       <a href="#" class="logo">Read<span>Kindled</span></a>
-      <a href="#signup" class="nav-cta">Get Early Access</a>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="https://loop-reader.vercel.app/login" class="nav-cta" style="background: transparent; color: var(--accent); border: 1.5px solid var(--accent);">Login</a>
+        <a href="https://loop-reader.vercel.app/login" class="nav-cta">Open App →</a>
+      </div>
     </div>
   </nav>
 
   <!-- SECTION 1: HERO -->
   <section class="hero" id="signup">
     <div class="container">
-      <div class="hero-badge">Coming Soon</div>
+      <div class="hero-badge">Now Live</div>
       <h1>Books that kindle transformation.</h1>
       <p class="hero-sub">
         The AI-powered platform that turns the world's best books into guided experiences you actually finish — and feel.
       </p>
+      <a href="https://loop-reader.vercel.app/login" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 32px; font-size: 1.1rem; padding: 18px 40px; animation: fadeUp 0.6s 0.3s ease both;">
+        Open App →
+      </a>
+      <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 36px; animation: fadeUp 0.6s 0.35s ease both;">or join the waitlist below</p>
       <div class="hero-form beehiiv-wrap">
         <iframe src="https://subscribe-forms.beehiiv.com/81ebb407-e2c6-42b6-8eed-8d9d735cd758" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="margin: 0; background-color: transparent; box-shadow: 0 0 #0000;"></iframe>
       </div>
