@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-app="readkindled" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles/brand-system/tokens.css">
   <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,14 +20,15 @@
     h1, h2, h3, h4, h5, h6, .logo { font-family: 'Lora', Georgia, serif; font-weight: 600 !important; }
 
     :root {
-      --bg: #F5ECD7;
+      /* Fallback values — brand-system tokens.css overrides via [data-app="readkindled"] */
+      --bg: #F4F8F0;
       --accent: #C97D2E;
-      --accent-hover: #B56D1E;
-      --text: #1A1410;
-      --text-secondary: #6B5744;
-      --card: #FAF6EE;
-      --border: #E8D5BA;
-      --footer-bg: #1A1410;
+      --accent-hover: #9A5E18;
+      --text: #1A2E14;
+      --text-secondary: #3D5A2E;
+      --card: #FFFFFF;
+      --border: #C8E0C4;
+      --footer-bg: #1A2E14;
       --white: #FFFDF8;
       --heading: 'Lora', Georgia, serif;
       --body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
